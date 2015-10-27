@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% block title %}{{user.first_name}}{% endblock %}
+{% block content %}
+<div class="mid">
+	<h1>Blogs</h1>
+	<form action="{% url 'setting' %}" method="post">
+		<div class="col-md-4">
+			<label>First name</label>
+			<input type="text" name="first_name" placeholder="{{user.first_name}}" class="form-group">
+			<label>Last name</label>
+			<input type="text" name="last_name" placeholder="{{user.last_name}}" class="form-group">
+			<label>New Password</label>
+			<input type="password" name="password" placeholder="New Password" class="form-group">
+			<input type="submit" value="submit">
+		</div>
+		{%csrf_token%}
+	</form>
+</div>
+{% endblock %}

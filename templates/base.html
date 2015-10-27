@@ -1,0 +1,69 @@
+{% load static from staticfiles %}
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+    	<meta charset="utf-8">
+    	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    	<title>My Diary | {% block title %}{% endblock %}</title>
+    	<link rel="stylesheet" href="{% static "css/bootstrap.min.css" %}">
+    	<link rel="stylesheet" type="text/css" href="{% static "css/styles.css" %}" />
+    	<script src="{% static "js/vendor/modernizr-2.8.3-respond-1.4.2.min.js" %}"></script>
+    	{% block head %}{% endblock %}
+  	</head>
+	
+	<body>
+		{% block header %}{% endblock %}
+
+
+		<div class="navbar navbar-default">
+			<div class="container">
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+					<a class="navbar-brand" href="{% url 'index' %}">My Diary</a>
+				</div>
+				<div class="navbar-collapse collapse">
+					<ul class="nav navbar-nav">
+						<li class=""><a href="{% url 'index' %}">Home</a></li>
+						<li><a href="#about">About</a></li>
+						<li><a href="#contact">Contact</a></li>
+					</ul>
+					{% block nav_user %}
+					{% include "toggle_login.html" %}
+					{% endblock %}
+				</div><!--/.navbar-collapse -->
+			</div>
+		</div>
+
+		
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12">
+					{% block heading %}{% endblock %}
+				</div>
+			</div>
+			<div class = "row">
+				<div class = "col-md-8">
+					{% block content %}{% endblock %}
+				</div>
+				<!-- <div class = "col-md-4">
+					<div class="panel panel-primary">
+						<div class="panel-heading">Tag cloud</div>
+						<div class="panel-body">
+							{% block sidebar %}
+							{% endblock %}
+						</div>
+					</div>
+				</div> -->
+			</div>
+			
+
+		<div class="footer">
+			{% block footer %}{% endblock %}
+		</div>
+
+	</body>
+	</html>

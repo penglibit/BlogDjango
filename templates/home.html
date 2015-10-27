@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% block title %}{{user.first_name}}{% endblock %}
+{% block heading %}
+	<h1>{{user.username}}'s Blog</h1>
+{% endblock %}
+{% block content %}
+<div class="mid">
+	<a href="{% url 'new_blog' %}">New Blog</a>
+	{%for blog in blogs%}
+	<div >
+		<ul class="list-unstyled">
+		<li class="well well-sm">
+			<br><a href="#" >{{blog.title}}</a></br>
+			<br>{{blog.body}}</br>
+			<br>{{blog.created_time|date:"D d M Y"}}</br>
+			<br>
+				<a href="{% url 'edit_blog' blog.id %}">Edit</a>&nbsp;|&nbsp;<a href="{% url 'delete_blog' blog.id %}">Delete</a>
+			</br>
+		</li>
+	</ul>
+	</div>
+	{% empty %}
+		<li>No blogs. :(</li>
+	{%endfor%}
+</div>
+{% endblock %}

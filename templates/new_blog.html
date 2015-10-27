@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block title %}{{fname}}{% endblock %}
+{% block content %}
+<div class="mid">
+	<div><img src="./images/profile/thumb/{{pic}}" width="50" style="vertical-align:middle;">&nbsp;<b>{{fname}}</b>&nbsp;|&nbsp;<a href="{% url 'logout' %}">Logout</a></div>
+	<h1>Blogs</h1>
+	<form action="{% url 'new_blog' %}" method="post">
+		<label>Title</label>
+		<textarea name="title" required></textarea>
+		<label>Content</label>
+		<textarea name="body" required cols="60" rows="10"></textarea>
+		<input type="submit" value="submit">
+		{%csrf_token%}
+	</form>
+</div>
+{% endblock %}
