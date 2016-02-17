@@ -13,8 +13,8 @@ def new_blog(request):
 		return redirect('index')
 	else:
 		if 'user_id' in request.session:
-			fname = request.session['fname']
-			return render(request, 'new_blog.html', {'fname': fname})
+			first_name = request.session['first_name']
+			return render(request, 'new_blog.html', {'first_name': first_name})
 		else:
 			return redirect('index')
 
@@ -27,8 +27,8 @@ def edit_blog(request, blog_id):
 	else:
 		if 'user_id' in request.session:
 			blog = post.objects.get(id=blog_id)
-			fname = request.session['fname']
-			context = {'fname':fname, 'blog': blog}
+			first_name = request.session['first_name']
+			context = {'first_name':first_name, 'blog': blog}
 			return render(request, 'edit_blog.html', context)
 		else:
 			return redirect('index')

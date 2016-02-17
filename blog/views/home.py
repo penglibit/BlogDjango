@@ -69,20 +69,20 @@ def login(request):
 		user_obj = User.objects.filter(email=user_email, password=user_password)
 		if user_obj.count() == 1 and user_obj[0].is_active:
 			request.session['user_id'] = user_obj[0].id
-			request.session['fname'] = user_obj[0].fname
+			request.session['first_name'] = user_obj[0].first_name
 	return redirect('index')
 
 def logout(request):
 	if 'user_id' in request.session:
 		del request.session['user_id']
-		del request.session['fname']
+		del request.session['first_name']
 		request.session.modified=True
 	return redirect('index')
 
 def setting(request):
 	if request.method == 'POST':
-		blog = User.objects.filter(id=request.session['user_id']).update(fname=request.POST.get('fname'),
-			lname=request.POST.get('lname'), password=request.POST.get('password'))
+		blog = User.objects.filter(id=request.session['user_id']).update(first_name=request.POST.get('first_name'),
+			lname=request.POST.get('last_name'), password=request.POST.get('password'))
 		return redirect('index')
 	else:
 		if 'user_id' in request.session:
