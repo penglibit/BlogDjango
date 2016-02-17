@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <meta name="viewport" content="width=640">
+
+    <link rel="stylesheet" href="stylesheets/core.css" media="screen">
+    <link rel="stylesheet" href="stylesheets/mobile.css" media="handheld, only screen and (max-device-width:640px)">
+    <link rel="stylesheet" href="stylesheets/github-light.css">
+
+    <script type="text/javascript" src="javascripts/modernizr.js"></script>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    <script type="text/javascript" src="javascripts/headsmart.min.js"></script>
+    <script type="text/javascript">
+      $(document).ready(function () {
+        $('#main_content').headsmart()
+      })
+    </script>
+    <title>A Blog Web application by PengLiPK</title>
+  </head>
+
+  <body>
+    <a id="forkme_banner" href="https://github.com/PengLiPK/BlogDjango">View on GitHub</a>
+    <div class="shell">
+
+      <header>
+        <span class="ribbon-outer">
+          <span class="ribbon-inner">
+            <h1>A Blog Web application</h1>
+            <h2>A blog web application implemented by Django</h2>
+          </span>
+          <span class="left-tail"></span>
+          <span class="right-tail"></span>
+        </span>
+      </header>
+
+      <section id="downloads">
+        <span class="inner">
+          <a href="https://github.com/PengLiPK/BlogDjango/zipball/master" class="zip"><em>download</em> .ZIP</a><a href="https://github.com/PengLiPK/BlogDjango/tarball/master" class="tgz"><em>download</em> .TGZ</a>
+        </span>
+      </section>
+
+
+      <span class="banner-fix"></span>
+
+
+      <section id="main_content">
+        <h3>
+<a id="a-blog-web-application" class="anchor" href="#a-blog-web-application" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>A Blog web application</h3>
+
+<p>This is a Blog web application implemented by <a href="https://www.djangoproject.com/">Django</a>. Django is a full-stack Python Wed framework. "full-stack" means that it combines front-end and back-end together and allows web application more modular. This application has features such as <code>sign up</code>, <code>email activation</code>, <code>login</code>, <code>logout</code>, <code>write blog</code>, <code>edit</code> and <code>delete blog</code>.</p>
+
+<h4>
+<a id="run-blog-web-application-on-local-machine" class="anchor" href="#run-blog-web-application-on-local-machine" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Run Blog web application on local machine</h4>
+
+<p>Download the web calendar and enter the <code>CalendarDjango</code> folder. Make sure you have installed Python and Django. Then type command:</p>
+
+<pre><code>python manage.py runserver
+</code></pre>
+
+<p>Well done! The server is running now. You can type <code>127.0.0.1:8000</code> on you web browser (Chrome, Firfox or others).</p>
+
+<ul>
+<li><p>The web will show a login/sign up page:<br>
+<img src="./images/login.png" alt="login"></p></li>
+<li><p>Click on <code>Creat Account</code>, you will sign up page. Type the information and a email with activation link will send to you. After activation, you can login.<br>
+<img src="./images/sign%20up.png" alt="sign up"></p></li>
+<li><p>When login succeed, you will see you personal blog page, nothing here:<br>
+<img src="./images/blog1.png" alt="blog1"></p></li>
+<li><p>You can add a new blog by click <code>New Blog</code>. The blog page will like this after you add a blog:<br>
+<img src="./images/blog2.png" alt="blog2"><br>
+There are <code>Edit</code> and <code>Delete</code> buttons which are used for editing and delete blog.</p></li>
+<li><p>There are <code>Setting</code> and <code>Logout</code> buttons at the top-right corner.<br>
+<img src="./images/logout.png" alt="logout"><br>
+In setting page, you can set your information such as name and password. If you click on <code>logout</code> button, yes, you will log out and return to the login/sign up page.</p></li>
+<li><p>The information of registration and blogs are stored in SQL database in the <code>BlogDjango</code> folder.</p></li>
+</ul>
+      </section>
+
+      <footer>
+        <span class="ribbon-outer">
+          <span class="ribbon-inner">
+            <p>this project by <a href="https://github.com/PengLiPK">PengLiPK</a> can be found on <a href="https://github.com/PengLiPK/BlogDjango">GitHub</a></p>
+          </span>
+          <span class="left-tail"></span>
+          <span class="right-tail"></span>
+        </span>
+        <p>Generated with <a href="https://pages.github.com">GitHub Pages</a> using Merlot</p>
+        <span class="octocat"></span>
+      </footer>
+
+    </div>
+
+              <script type="text/javascript">
+            var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+            document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+          </script>
+          <script type="text/javascript">
+            try {
+              var pageTracker = _gat._getTracker("UA-73791386-6");
+            pageTracker._trackPageview();
+            } catch(err) {}
+          </script>
+
+  </body>
+</html>
